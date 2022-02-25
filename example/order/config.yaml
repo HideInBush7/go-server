@@ -1,0 +1,5 @@
+etcd:
+  endpoints:
+    - env_etcd_1:2379
+    
+port: 8000
