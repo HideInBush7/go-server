@@ -3,7 +3,7 @@ package rpcclient
 import (
 	"context"
 
-	"github.com/HideInBush7/go-server/example/order/pb"
+	"github.com/HideInBush7/go-server/etcd/example/order/pb"
 	"google.golang.org/grpc"
 )
 

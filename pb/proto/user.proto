@@ -1,0 +1,92 @@
+syntax = "proto3";
+
+option go_package = "/pb";
+
+message RegisterRequest {
+    string username = 1;
+    string password = 2;
+}
+
+message LoginRequest {
+    string username = 1;
+    string password = 2;
+}
+
+message UserInfoRequest {
+    int64 uid = 1;
+}
+
+message UserListRequest {
+    string sortBy = 1;
+}
+
+message UpdateUserRequest {
+    string score = 1;
+    string tag = 2;
+    string name = 3;
+}
+
+message UserInfoReply {
+    UserInfo userInfo = 1;
+    CommonReply common = 2;
+}
+
+message UserListReply {
+    UserList list = 1;
+    CommonReply common = 2;
+}
+
+// 用户详细信息
+message UserInfo {
+    int64 uid = 1;
+    string username = 2;
+    string name = 3;
+    ROLE role = 4;
+    int32 deadtimes = 5;
+    float balance = 6;
+    int64 score = 7;
+    int32 health = 8;
+    string tag = 9;
+}
+
+// 用户简介
+message UserProfile {
+    int64 uid = 1;
+    string username = 2;
+    string name = 3;
+    ROLE role = 4;
+    int64 score = 5;
+}
+
+// 用户列表
+message UserList {
+    repeated UserProfile userList = 1;
+}
+
+message CommonReply {
+    CODE code = 1;
+    string message = 2;
+}
+
+enum ROLE {
+    ADMIN = 0;
+    NORMAL_USER = 2;
+    VIP_USER = 3;
+    S_VIP_USER = 4;
+}
+
+enum CODE {
+    SUCCESS = 0;
+    ERROR = 500;
+    USER_NOT_EXIST = 50001;
+    USER_PASSWORD_WRONG = 50002;
+    USER_ALREADY_EXIST = 50003;
+}
+
+service User {
+    rpc Register (RegisterRequest) returns (UserInfoReply);
+    rpc Login (LoginRequest) returns (UserInfoReply);
+    rpc GetUserInfo (UserInfoRequest) returns (UserInfoReply);
+    rpc GetUserList (UserListRequest) returns (UserList);
+    rpc UpdateUser (UpdateUserRequest) returns (UserInfoReply);
+}

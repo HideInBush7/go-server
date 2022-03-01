@@ -7,8 +7,8 @@ import (
 
 	"github.com/HideInBush7/go-server/config"
 	"github.com/HideInBush7/go-server/etcd"
-	"github.com/HideInBush7/go-server/example/order/pb"
-	"github.com/HideInBush7/go-server/example/order/rpcclient"
+	"github.com/HideInBush7/go-server/etcd/example/order/pb"
+	"github.com/HideInBush7/go-server/etcd/example/order/rpcclient"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/balancer/roundrobin"
 )
