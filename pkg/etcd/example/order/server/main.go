@@ -7,9 +7,9 @@ import (
 	"os/signal"
 	"syscall"
 
-	"github.com/HideInBush7/go-server/config"
-	"github.com/HideInBush7/go-server/etcd"
-	"github.com/HideInBush7/go-server/example/order/rpcserver"
+	"github.com/HideInBush7/go-server/pkg/config"
+	"github.com/HideInBush7/go-server/pkg/etcd"
+	"github.com/HideInBush7/go-server/pkg/etcd/example/order/rpcserver"
 	"github.com/spf13/viper"
 )
 

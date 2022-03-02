@@ -1,0 +1,20 @@
+# 日志
+debug: true
+loglevel: debug
+
+# 程序默认运行端口
+port: 8001
+
+mysql:
+  - 
+    alias: default
+    dsn: root:root@tcp(env_mysql_1:3306)/go_server?charset=utf8mb4&parseTime=True
+    maxIdleConns: 10
+    maxOpenConns: 20
+
+redis:
+  -
+    alias: default
+    address: env_redis_1:6379
+    maxIdleConns: 3
+    idleTimeout: 240

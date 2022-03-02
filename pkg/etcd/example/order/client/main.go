@@ -5,10 +5,10 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/HideInBush7/go-server/config"
 	"github.com/HideInBush7/go-server/etcd"
 	"github.com/HideInBush7/go-server/etcd/example/order/pb"
 	"github.com/HideInBush7/go-server/etcd/example/order/rpcclient"
+	"github.com/HideInBush7/go-server/pkg/config"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/balancer/roundrobin"
 )

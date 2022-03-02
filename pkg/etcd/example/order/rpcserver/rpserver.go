@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"net"
 
-	"github.com/HideInBush7/go-server/etcd/example/order/pb"
+	"github.com/HideInBush7/go-server/pkg/etcd/example/order/pb"
 	"github.com/spf13/viper"
 	"google.golang.org/grpc"
 )
